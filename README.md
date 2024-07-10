@@ -5,6 +5,6 @@ This repository contains multiple projects at acadamic as well my personal inter
 
 ## Projects
 
-# 1. UVM RISC V Project: 
+### 1. UVM RISC V Project: 
 
-# 2. 
+### 2. 
