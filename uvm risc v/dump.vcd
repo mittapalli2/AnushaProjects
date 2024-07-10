@@ -1,0 +1,47 @@
+$date
+	Wed May  3 10:02:44 2023
+$end
+
+$version
+	Synopsys VCS version R-2020.12
+$end
+
+$timescale
+	10ps
+$end
+
+$comment Csum: 1 ef8c1313345cca5c $end
+
+
+$scope module $unit $end
+$upscope $end
+
+
+$scope module riscv_pkg $end
+$upscope $end
+
+
+$scope module top $end
+$var reg 1 ! reset $end
+
+$scope begin unnamed$$_vcs_0 $end
+$upscope $end
+
+$upscope $end
+
+
+$scope module uvm_pkg $end
+$var reg 32 " UVM_UNBOUNDED_CONNECTIONS [31:0] $end
+$var reg 1 # uvm_start_uvm_declarations $end
+$var reg 32 $ uvm_global_random_seed [31:0] $end
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+1#
+b11111111111111111111111111111111 "
+b01000010000001111100110001000111 $
+x!
+$end

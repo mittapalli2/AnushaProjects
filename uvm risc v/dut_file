@@ -1,0 +1,17 @@
+`ifdef dut31
+	`include "dut31.svp"
+`elsif dut32
+	`include "dut32.svp"
+`elsif dut33
+	`include "dut33.svp"
+`elsif dut34
+	`include "dut34.svp"
+`elsif dut35
+	`include "dut35.svp"
+`elsif dut36
+	`include "dut36.svp"
+`elsif dut37
+	`include "dut37.svp"
+`else
+	`include "dut38.svp"
+`endif
