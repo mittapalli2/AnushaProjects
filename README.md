@@ -17,12 +17,12 @@ This project focuses on the design of a 1x3 router, which routes data from one i
 - **Verilog Implementation:** Implementation of the router design in Verilog.
 - **Simulation and Verification:** Development of testbenches to simulate and verify the correct operation of the route
 
-### Floating Point MAC
+### Floating Point MAC with Synchronous FIFO 
 This project involves the design of a Floating Point Multiply-Accumulate (MAC) unit. The key aspects of this project are:
 - **Floating Point Arithmetic:** Understanding and implementing floating-point arithmetic operations based on IEEE 754 standards.
 - **MAC Unit Design:** Design of a MAC unit that performs floating-point multiplication followed by addition.
 - **Verilog Coding:** Coding the MAC unit in Verilog and ensuring it handles various edge cases and exceptional conditions.
-- **Testing and Validation:** Creation of test cases to validate the accuracy and performance of the floating-point MAC unit.
+
 
 ## Usage
 Each project folder contains the necessary source code, testbenches, and documentation. To run the simulations and tests, use a Verilog/SystemVerilog simulator like ModelSim or VCS. Detailed instructions for setting up and running each project are provided within the respective project folders.
