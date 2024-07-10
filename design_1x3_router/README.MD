@@ -55,3 +55,20 @@ Characteristics of the DUT Input Protocol are as follows:
     * The testbench shouldn't drive any bytes when busy signal is detected instead it should hold the last driven value.
     * The "busy" signal when asserted drops any incoming byte of data. 
     * The "err" signal is asserted when a packet parity mismatch is detected.
+
+## Router- Output Protocol
+Characteristics of the Output Protocol are as follows:
+- **TestBench Note:** All output signals are active high and are synchronized to the rising edge of the clock.
+
+- **Output Port Buffering:** Each output port data_out_X (data_out_0, data_out_1, data_out_2) is internally buffered by a FIFO of size 16x9.
+
+- **Valid Data Signal:** The router asserts the vld_out_X (vld_out_0, vld_out_1, or vld_out_2) signal when valid data appears on the vld_out_X (data_out_0, data_out_1, or data_out_2) output bus. This signal indicates to the receiver’s client that data is available on a particular output data bus.
+
+- **Packet Receiver Behavior:** The packet receiver waits until it has enough space to hold the bytes of the packet, then responds with the assertion of the read_enb_X (read_enb_0, read_enb_1, or read_enb_2) signal.
+
+- **Read Enable Signal:** The read_enb_X (read_enb_0, read_enb_1, or read_enb_2) input signal can be asserted on the falling clock edge, indicating that data are read from the data_out_X (data_out_0, data_out_1, or data_out_2) bus.
+
+* The read_enb_X (read_enb_0, read_enb_1, or read_enb_2) must be asserted within 30 clock cycles of vld_out_X (vld_out_0,vld_out_1 or vld_out_2) being asserted else time-out occurs, which resets the FIFO.
+
+* The data_out_X bus will be tri-stated during a scenario when a packet's byte is lost due to time-out condition. 
+
