@@ -36,7 +36,7 @@ This design allows for the reception of only one packet at a time, but it can re
     * Length: The data length, specified in 6 bits. This indicates the number of data bytes. The minimum data size is 1 byte, and the maximum is 63 bytes.
         * If Length = 1, the data length is 1 byte.
         * If Length = 63, the data length is 63 bytes.
-        
+
 - **Payload:** The payload contains the actual data. Data should be in bytes.
 
 - **Parity:** This field ensures packet security. It is calculated as the bitwise parity over the header and payload bytes.
@@ -52,3 +52,6 @@ Characteristics of the DUT Input Protocol are as follows:
     * Since the header byte contains the address, which tells the router to which output channel the packet should be routed to. (data_out_0, data_out_1, or data_out_2).
     * Each subsequent byte of payload after the header byte should be driven on the input data bus for every new falling edge of the clock.
     * After the last payload byte has been driven, on the next falling clock, the packet_valid signal must be deasserted, and the packet parity byte should be driven. This signals the completion of the packet.
+    * The testbench shouldn't drive any bytes when busy signal is detected instead it should hold the last driven value.
+    * The "busy" signal when asserted drops any incoming byte of data. 
+    * The "err" signal is asserted when a packet parity mismatch is detected.
