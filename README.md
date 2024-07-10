@@ -6,10 +6,8 @@ This repository contains multiple projects completed during academic courses as 
 ## Projects
 
 ### UVM RISC V Project
-This project involves the design and verification of a RISC-V processor using Universal Verification Methodology (UVM). The project includes the following components:
-- **RISC-V Core Design:** The design of a RISC-V core, including its ALU, register file, control unit, and memory interface.
-- **Testbench Development:** Creation of a UVM testbench to verify the functionality of the RISC-V core.
-- **Assertions and Coverage:** Implementation of assertions and functional coverage to ensure thorough verification of the processor design.
+This project involves the verification of a RISC-V processor using Universal Verification Methodology (UVM). The project includes the following components:
+- **Testbench Development:** Designed message based testbench in UVM hierarchy, that tests and finds failing DUT’s of the vending machine. Implemented sequence, sequencer, driver, monitor, scoreboard, and reference model for the verification. Verified the DUTs using constrained random testing for test cases and directed testing for few corner cases.
 
 ### Design of 1x3 Router
 This project focuses on the design of a 1x3 router, which routes data from one input channel to one of three output channels based on control signals. The project includes:
