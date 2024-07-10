@@ -7,4 +7,4 @@ This repository contains multiple projects at acadamic as well my personal inter
 
 ### 1. UVM RISC V Project: 
 
-### 2. 
+### 2. Design of 1x3 Router: 
