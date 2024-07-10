@@ -28,4 +28,35 @@ This design allows for the reception of only one packet at a time, but it can re
 
 - **Reading Packet:** Refer to the router output protocol for detailed procedures.
 
-##
+## Router - Packet
+- **Packet Format:** The packet consists of three parts: Header, Payload, and Parity. Each ID is 8 bits wide, and the payload length can range from 1 to 63 bytes.
+
+- **Header:** The packet header contains two fields: DA (Destination Address) and Length.
+DA: The destination address of the packet, which is 2 bits. The router directs the packet to respective ports based on this address. Each output port has a unique 2-bit address. If the packet’s destination address matches the port address, the router forwards the packet to that port. The address "3" is invalid.
+Length: The data length, specified in 6 bits. This indicates the number of data bytes. The minimum data size is 1 byte, and the maximum is 63 bytes.
+    If Length = 1, the data length is 1 byte.
+    If Length = 63, the data length is 63 bytes.
+- **Payload:** The payload contains the actual data. Data should be in bytes.
+
+- **Parity:** This field ensures packet security. It is calculated as the bitwise parity over the header and payload bytes.
+
+## Router- Input Protocol
+Characteristics of the DUT Input Protocol are as follows:
+
+- **TestBench Note:**
+- **:** All input signals are active high except the active low reset and are synchronized to the falling edge of the clock.
+The DUT router is sensitive to the rising edge of the clock. Hence, in the testbench, driving input signals on the falling edge ensures adequate setup and hold time.
+In a SystemVerilog/UVM-based testbench, clocking blocks can be used to drive signals on the positive edge of the clock, thereby avoiding metastability.
+
+
+
+The packet_valid signal is asserted on the same clock edge when the header byte is driven onto the input data bus.
+
+
+Since the header byte contains the address, which tells the router to which output channel the packet should be routed to. (data_out_0, data_out_1, or data_out_2).
+
+
+Each subsequent byte of payload after the header byte should be driven on the input data bus for every new falling edge of the clock.
+
+
+After the last payload byte has been driven, on the next falling clock, the packet_valid signal must be deasserted, and the packet parity byte should be driven. This signals the completion of the packet.
