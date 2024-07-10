@@ -15,7 +15,7 @@ This project involves the design and verification of a RISC-V processor using Un
 This project focuses on the design of a 1x3 router, which routes data from one input channel to one of three output channels based on control signals. The project includes:
 - **Router Architecture:** Design of the router's internal architecture, including its control logic and data path.
 - **Verilog Implementation:** Implementation of the router design in Verilog.
-- **Simulation and Verification:** Development of testbenches to simulate and verify the correct operation of the router.
+- **Simulation and Verification:** Development of testbenches to simulate and verify the correct operation of the route
 
 ### Floating Point MAC
 This project involves the design of a Floating Point Multiply-Accumulate (MAC) unit. The key aspects of this project are:
