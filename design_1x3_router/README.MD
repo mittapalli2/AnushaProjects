@@ -44,7 +44,7 @@ Length: The data length, specified in 6 bits. This indicates the number of data 
 Characteristics of the DUT Input Protocol are as follows:
 
 - **TestBench Note:**
-- **:** All input signals are active high except the active low reset and are synchronized to the falling edge of the clock.
+- * All input signals are active high except the active low reset and are synchronized to the falling edge of the clock.
 The DUT router is sensitive to the rising edge of the clock. Hence, in the testbench, driving input signals on the falling edge ensures adequate setup and hold time.
 In a SystemVerilog/UVM-based testbench, clocking blocks can be used to drive signals on the positive edge of the clock, thereby avoiding metastability.
 
