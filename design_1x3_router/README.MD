@@ -32,10 +32,11 @@ This design allows for the reception of only one packet at a time, but it can re
 - **Packet Format:** The packet consists of three parts: Header, Payload, and Parity. Each ID is 8 bits wide, and the payload length can range from 1 to 63 bytes.
 
 - **Header:** The packet header contains two fields: DA (Destination Address) and Length.
-* DA: The destination address of the packet, which is 2 bits. The router directs the packet to respective ports based on this address. Each output port has a unique 2-bit address. If the packet’s destination address matches the port address, the router forwards the packet to that port. The address "3" is invalid.
-* Length: The data length, specified in 6 bits. This indicates the number of data bytes. The minimum data size is 1 byte, and the maximum is 63 bytes.
-    * If Length = 1, the data length is 1 byte.
-    * If Length = 63, the data length is 63 bytes.
+    * DA: The destination address of the packet, which is 2 bits. The router directs the packet to respective ports based on this address. Each output port has a unique 2-bit address. If the packet’s destination address matches the port address, the router forwards the packet to that port. The address "3" is invalid.
+    * Length: The data length, specified in 6 bits. This indicates the number of data bytes. The minimum data size is 1 byte, and the maximum is 63 bytes.
+        * If Length = 1, the data length is 1 byte.
+        * If Length = 63, the data length is 63 bytes.
+        
 - **Payload:** The payload contains the actual data. Data should be in bytes.
 
 - **Parity:** This field ensures packet security. It is calculated as the bitwise parity over the header and payload bytes.
