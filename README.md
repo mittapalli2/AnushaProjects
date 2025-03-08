@@ -1,6 +1,6 @@
 # README
 
-## Overview
+## Overview - All Projects
 This repository contains multiple projects completed during academic courses as well as personal practice projects. Each project showcases different aspects of hardware design and verification using Verilog and SystemVerilog, with an emphasis on understanding and implementing various digital design concepts.
 
 ## Projects
